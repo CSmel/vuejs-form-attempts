@@ -6,46 +6,45 @@
         <p> Enter your details</p>
       </div>
       <div slot="form-fields">
-        <input type="text" v-model="user" placeholder="username"  />
-        <input type="password" v-model="password" @keyup.enter="submitPass" placeholder="password"  />
+        <input type="text" v-model="user" placeholder="username"  maxlength="8"/>
+        <input type="text" v-model="password" placeholder="password" maxlength="8" />
 
       </div>
-      <div slot="form-controls">
-    <button v-on:click="submitUser(); submitPass()">Login</button>
-      </div>
+
 
 
     </form-helper>
+    <div slot="form-controls">
+      <button v-on:click="submitUser(); submitPass()">Login</button>
+    </div>
   </div>
 </template>
 
-  <script>
+<script>
   import formHelper from './formHelper.vue'
   export default {
-name: "formTwo",
+    name: "formTwo",
     components:{
       'form-helper': formHelper
     },
     data(){
       return {
-          user: '',
-          password: '',
+        user: '',
+        password: '',
       }
     },
     methods:{
-  submitUser: function () {
-this.$emit("inputData", this.user);
-this.user = "";
-  },
+      submitUser: function () {
+        this.$emit("inputData", this.user);
+        this.user = "";
+      },
       submitPass: function () {
         this.$emit("inputPass", this.password);
         this.password = "";
       }
-
     }
   }
 </script>
 
 <style scoped>
-
 </style>

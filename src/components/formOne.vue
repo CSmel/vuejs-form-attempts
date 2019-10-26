@@ -8,7 +8,7 @@
       <div slot="form-fields">
         <label>Your Name:</label>
         <input type="text" placeholder="name" required />
-<br><label>Your Message:</label>
+        <br><label>Your Message:</label>
         <textarea></textarea>
       </div>
       <div slot="form-controls">
@@ -28,7 +28,6 @@
       }
     },
     methods:{
-
     }
   }
 </script>
@@ -36,10 +35,9 @@
   input, textarea{
     border-color: cadetblue;
     border-style:solid;
- width: 100%;
+    width: 100%;
   }
   button{
     border-style:solid;
-
   }
 </style>

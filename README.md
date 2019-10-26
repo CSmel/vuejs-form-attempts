@@ -1,6 +1,6 @@
-# vuejs-three
+# vuejs-form-attempts
 
-> Third portion of the Net Ninja Vue JS 2 Tutorial (#27+)
+> A Vue.js project
 
 ## Build Setup
 
