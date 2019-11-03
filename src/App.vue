@@ -51,6 +51,7 @@
   @import url('https://fonts.googleapis.com/css?family=Noto+Sans+SC&display=swap');
   body{
     font-family: 'Noto Sans SC', sans-serif;
+
   }
   h1, h2 {
     font-weight: normal;
@@ -71,6 +72,7 @@
     border: 2px solid lightcoral;
     margin: 0 auto;
     padding: 10px;
+    background-color: #fff;
   }
   button {
     border: 1px solid black;

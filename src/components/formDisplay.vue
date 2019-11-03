@@ -1,12 +1,16 @@
 <template>
 
   <div>
-    <h2>Login Attempts</h2>
+    <h2>Failed Login Attempts</h2>
     <div slot="form-display-screen">
+     Total of {{ userList.length}}
       <div class="outer-container">
       <div class="container-user">
-      <div class="user" v-for="(user, index) in userList" :item="user" :key="index">
+
+      <div class="user" v-for="(user, index) in userList" :item="user" :key="index" >
+
         <label>User Name: {{ user }} </label>
+
       </div>  </div>
       <div class="container-password">
       <div class="password" v-for="(password, index) in passList" :item="password" :key="index">
@@ -43,11 +47,14 @@
     watch:{
       usr: function () {
         this.userList.push(this.usr);
+
       },
       pw: function () {
         this.passList.push(this.pw);
       }
     }
+
+
   }
 </script>
 <style scoped>
