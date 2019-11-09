@@ -24,8 +24,12 @@
       </ul>
 
     </form>
-    <div id="form-display-screen">
-      <slot name="form-display-screen">
+    <div id="form-display-screen-login">
+      <slot name="form-display-screen-login">
+
+      </slot></div>
+    <div id="form-display-screen-contact">
+      <slot name="form-display-screen-contact">
 
       </slot></div>
   </div>

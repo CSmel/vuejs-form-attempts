@@ -1,20 +1,20 @@
 <template>
   <div>
     <form-helper>
-
       <div slot="form-header">
         <!--<img v-bind:src="attemptsImage"> -->
         <h3>Form Two - Login</h3>
         <p> Enter your details</p>
       </div>
       <div slot="form-fields">
-        <div class="tellMe" >{{good}}</div>
-        <input  type="text" v-model="user" placeholder="username" maxlength="8"/>
-        <input type="text" v-model="password" placeholder="password" maxlength="8"/>
+        <div class="tellMe" >{{displayNotice}}</div>
+
+        <input type="text" :style="{'border-color': color}" v-model="user" placeholder="username" maxlength="8"/>
+        <input type="text" :style="{'border-color': color}" v-model="password" placeholder="password" maxlength="8"/>
       </div>
     </form-helper>
     <div slot="form-controls">
-      <button v-on:click=" checkUser(); submitUser(); submitPass()">Login</button>
+      <button v-on:click=" checkUser();">Login</button>
     </div>
   </div>
 </template>
@@ -30,13 +30,11 @@
       return {
         user: '',
         password: '',
-        good: ''
+        displayNotice: '',
+        color: ''
       }
     },
-    computed: {
-
-
-    },
+    computed: {},
     methods: {
 
       //  submitUser: function () {
@@ -49,28 +47,28 @@
       // }
       checkUser: function () {
         if (this.user === 'mel' && this.password === 'password') {
-        this.good = 'Validation Passed';
+          this.displayNotice = 'Validation Passed';
+          this.color = 'blue';
+
         } else {
           this.$emit("inputData", this.user);
           this.user = "";
           this.$emit("inputPass", this.password);
-            this.password = "";
-            this.good = 'Validation Failed'
+          this.password = "";
+          this.displayNotice = 'Validation Failed';
+          this.color = 'red';
         }
       },
     }
   }
 </script>
 <style>
-  .goodColor{
-    border: 2px solid green
-  }
-  .badColor{
-    border: 2px solid red
-  }
-.tellMe{
- background-color: lawngreen;
+
+  .tellMe {
+    background-color: lawngreen;
     height: 50px;
     width: 50px
-     }
+  }
+
+
 </style>

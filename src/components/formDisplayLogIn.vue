@@ -2,12 +2,12 @@
 
   <div>
     <h2>Failed Login Attempts</h2>
-    <div slot="form-display-screen">
+    <div slot="form-display-screen-login">
 
      Total of {{ userList.length}}
       <div class="outer-container">
       <div class="container-user">
-<keep-alive></keep-alive>
+
       <div class="user" v-for="(user, index) in userList" :item="user" :key="index" >
 
         <label>User Name: {{ user }} </label>
@@ -26,7 +26,7 @@
   import formHelper from './formHelper.vue';
   import formTwo from './formTwo.vue';
   export default {
-    name: "formDisplay",
+    name: "formDisplayLogIn",
     props:{
       usr: {
         type: String
@@ -34,7 +34,6 @@
       pw: {
         type: String
       },
-      isShowing: false
     },
     components:{
       'form-Two': formTwo,

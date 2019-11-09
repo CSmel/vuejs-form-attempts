@@ -7,28 +7,39 @@
       </div>
       <div slot="form-fields">
         <label>Your Name:</label>
-        <input type="text" placeholder="name" required />
+        <input v-model="name" type="text" placeholder="name" />
         <br><label>Your Message:</label>
-        <textarea></textarea>
-      </div>
+        <input v-model="message"/>
+      </div>    </form-helper>
       <div slot="form-controls">
-        <button v-on:click="handleSubmit">Submit</button>
+        <button v-on:click="heyMessage();">hey</button>
       </div>
-    </form-helper>
+
   </div>
 </template>
 <script>
   import formHelper from './formHelper.vue'
   export default {
+    name: "formOne",
     components:{
       'form-helper': formHelper
     },
     data(){
       return {
+        name: '',
+        message: ''
       }
+
     },
     methods:{
-    }
+      heyMessage: function () {
+          this.$emit("inputName", this.name);
+          this.name = "";
+          this.$emit("inputMessage", this.message);
+          this.message = "";
+        }
+      },
+
   }
 </script>
 <style scoped>
