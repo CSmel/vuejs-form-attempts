@@ -8,9 +8,13 @@
       </div>
       <div slot="form-fields">
         <div class="tellMe" >{{displayNotice}}</div>
-
+<label>User Name:
         <input type="text" :style="{'border-color': color}" v-model="user" placeholder="username" maxlength="8"/>
-        <input type="text" :style="{'border-color': color}" v-model="password" placeholder="password" maxlength="8"/>
+</label>
+        <label>Password:
+
+          <input type="text" :style="{'border-color': color}" v-model="password" placeholder="password" maxlength="8"/>
+        </label>
       </div>
     </form-helper>
     <div slot="form-controls">
@@ -69,6 +73,14 @@
     height: 50px;
     width: 50px
   }
+  input, textarea {
+    border-color: cadetblue;
+    border-style: solid;
+    width: 100%;
+  }
 
+  button {
+    border-style: solid;
+  }
 
 </style>
