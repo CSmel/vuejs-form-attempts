@@ -3,10 +3,11 @@
   <div>
     <h2>Failed Login Attempts</h2>
     <div slot="form-display-screen">
+
      Total of {{ userList.length}}
       <div class="outer-container">
       <div class="container-user">
-
+<keep-alive></keep-alive>
       <div class="user" v-for="(user, index) in userList" :item="user" :key="index" >
 
         <label>User Name: {{ user }} </label>
@@ -32,7 +33,8 @@
       },
       pw: {
         type: String
-      }
+      },
+      isShowing: false
     },
     components:{
       'form-Two': formTwo,
