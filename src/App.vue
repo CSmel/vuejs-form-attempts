@@ -37,8 +37,6 @@
     data(){
       return {
         component: 'form-two',
-       // componentTwo:'form-Two',
-      //componentOne: 'form-one',
         componentContact: 'form-display-screen-contact',
         componentDisplay: 'form-display-screen-login',
         childData: "",

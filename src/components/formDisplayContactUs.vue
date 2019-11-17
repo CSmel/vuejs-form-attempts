@@ -33,7 +33,6 @@
       msg: {
         type: String
       },
-     // isShowing: false
     },
     components:{
       'form-One': formOne,
